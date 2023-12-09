@@ -17,7 +17,7 @@ namespace DataAccessLayer
         public string IsDeletedStr { get; set; }
 
         public Kategori() { }
-        public Kategori(int id, string isim, string aciklama, bool isdelted, bool isactive)
+        public Kategori(int id, string isim, string aciklama,  bool isactive, bool isdelted)
         {
             this.ID = id;
             this.Isim = isim;

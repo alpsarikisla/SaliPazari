@@ -23,5 +23,27 @@ namespace SaliPazariWinformsApp
         {
             TSSL_kullanici.Text = Helpers.GirisYapanYonetici.KullaniciAdi + "(" + Helpers.GirisYapanYonetici.YetkiIsim + ")";
         }
+
+        private void TSMI_KategoriForm_Click(object sender, EventArgs e)
+        {
+            Form[] acikformlar = this.MdiChildren;
+
+            bool acikmi = false;
+
+            foreach (Form item in acikformlar)
+            {
+                if (item.GetType() == typeof(KategoriIslemleri))
+                {
+                    item.Activate();
+                    acikmi = true;
+                }
+            }
+            if (acikmi == false)
+            {
+                KategoriIslemleri frm = new KategoriIslemleri();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+        }
     }
 }

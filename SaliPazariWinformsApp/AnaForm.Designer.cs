@@ -33,13 +33,13 @@
             this.TSSL_kullanici = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dosyaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kapatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.urunİşlemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMI_KategoriForm = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMI_UrunForm = new System.Windows.Forms.ToolStripMenuItem();
             this.satışİşlemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kullanıcıİşlemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yardımToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kapatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.TSMI_KategoriForm = new System.Windows.Forms.ToolStripMenuItem();
-            this.TSMI_UrunForm = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -81,6 +81,13 @@
             this.dosyaToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.dosyaToolStripMenuItem.Text = "Dosya";
             // 
+            // kapatToolStripMenuItem
+            // 
+            this.kapatToolStripMenuItem.Name = "kapatToolStripMenuItem";
+            this.kapatToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
+            this.kapatToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.kapatToolStripMenuItem.Text = "Kapat";
+            // 
             // urunİşlemleriToolStripMenuItem
             // 
             this.urunİşlemleriToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -89,6 +96,19 @@
             this.urunİşlemleriToolStripMenuItem.Name = "urunİşlemleriToolStripMenuItem";
             this.urunİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
             this.urunİşlemleriToolStripMenuItem.Text = "Urun İşlemleri";
+            // 
+            // TSMI_KategoriForm
+            // 
+            this.TSMI_KategoriForm.Name = "TSMI_KategoriForm";
+            this.TSMI_KategoriForm.Size = new System.Drawing.Size(180, 22);
+            this.TSMI_KategoriForm.Text = "Kategoriler";
+            this.TSMI_KategoriForm.Click += new System.EventHandler(this.TSMI_KategoriForm_Click);
+            // 
+            // TSMI_UrunForm
+            // 
+            this.TSMI_UrunForm.Name = "TSMI_UrunForm";
+            this.TSMI_UrunForm.Size = new System.Drawing.Size(180, 22);
+            this.TSMI_UrunForm.Text = "Ürünler";
             // 
             // satışİşlemleriToolStripMenuItem
             // 
@@ -107,25 +127,6 @@
             this.yardımToolStripMenuItem.Name = "yardımToolStripMenuItem";
             this.yardımToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.yardımToolStripMenuItem.Text = "Yardım";
-            // 
-            // kapatToolStripMenuItem
-            // 
-            this.kapatToolStripMenuItem.Name = "kapatToolStripMenuItem";
-            this.kapatToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.kapatToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.kapatToolStripMenuItem.Text = "Kapat";
-            // 
-            // TSMI_KategoriForm
-            // 
-            this.TSMI_KategoriForm.Name = "TSMI_KategoriForm";
-            this.TSMI_KategoriForm.Size = new System.Drawing.Size(180, 22);
-            this.TSMI_KategoriForm.Text = "Kategoriler";
-            // 
-            // TSMI_UrunForm
-            // 
-            this.TSMI_UrunForm.Name = "TSMI_UrunForm";
-            this.TSMI_UrunForm.Size = new System.Drawing.Size(180, 22);
-            this.TSMI_UrunForm.Text = "Ürünler";
             // 
             // AnaForm
             // 
