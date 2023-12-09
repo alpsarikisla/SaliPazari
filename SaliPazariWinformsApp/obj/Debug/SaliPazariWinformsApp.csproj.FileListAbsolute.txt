@@ -1,0 +1,14 @@
+C:\Users\303\Documents\GitHub\BiliYorumWebApp\SaliPazariWinformsApp\SaliPazariWinformsApp\bin\Debug\SaliPazariWinformsApp.exe.config
+C:\Users\303\Documents\GitHub\BiliYorumWebApp\SaliPazariWinformsApp\SaliPazariWinformsApp\bin\Debug\SaliPazariWinformsApp.exe
+C:\Users\303\Documents\GitHub\BiliYorumWebApp\SaliPazariWinformsApp\SaliPazariWinformsApp\bin\Debug\SaliPazariWinformsApp.pdb
+C:\Users\303\Documents\GitHub\BiliYorumWebApp\SaliPazariWinformsApp\SaliPazariWinformsApp\obj\Debug\SaliPazariWinformsApp.csproj.AssemblyReference.cache
+C:\Users\303\Documents\GitHub\BiliYorumWebApp\SaliPazariWinformsApp\SaliPazariWinformsApp\obj\Debug\SaliPazariWinformsApp.AnaForm.resources
+C:\Users\303\Documents\GitHub\BiliYorumWebApp\SaliPazariWinformsApp\SaliPazariWinformsApp\obj\Debug\SaliPazariWinformsApp.Properties.Resources.resources
+C:\Users\303\Documents\GitHub\BiliYorumWebApp\SaliPazariWinformsApp\SaliPazariWinformsApp\obj\Debug\SaliPazariWinformsApp.csproj.GenerateResource.cache
+C:\Users\303\Documents\GitHub\BiliYorumWebApp\SaliPazariWinformsApp\SaliPazariWinformsApp\obj\Debug\SaliPazariWinformsApp.csproj.CoreCompileInputs.cache
+C:\Users\303\Documents\GitHub\BiliYorumWebApp\SaliPazariWinformsApp\SaliPazariWinformsApp\obj\Debug\SaliPazariWinformsApp.exe
+C:\Users\303\Documents\GitHub\BiliYorumWebApp\SaliPazariWinformsApp\SaliPazariWinformsApp\obj\Debug\SaliPazariWinformsApp.pdb
+C:\Users\303\Documents\GitHub\BiliYorumWebApp\SaliPazariWinformsApp\SaliPazariWinformsApp\obj\Debug\SaliPazariWinformsApp.KullaniciGiris.resources
+C:\Users\303\Documents\GitHub\BiliYorumWebApp\SaliPazariWinformsApp\SaliPazariWinformsApp\bin\Debug\DataAccessLayer.dll
+C:\Users\303\Documents\GitHub\BiliYorumWebApp\SaliPazariWinformsApp\SaliPazariWinformsApp\bin\Debug\DataAccessLayer.pdb
+C:\Users\303\Documents\GitHub\BiliYorumWebApp\SaliPazariWinformsApp\SaliPazariWinformsApp\obj\Debug\SaliPazariWinformsApp.csproj.CopyComplete

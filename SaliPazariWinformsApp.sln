@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34003.232
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaliPazariWinformsApp", "SaliPazariWinformsApp\SaliPazariWinformsApp.csproj", "{9B473109-4AF4-464B-AAE6-0CA3FBED8600}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{441B6B4E-08A2-4EA7-BB20-5AF315163B7E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9B473109-4AF4-464B-AAE6-0CA3FBED8600}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B473109-4AF4-464B-AAE6-0CA3FBED8600}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B473109-4AF4-464B-AAE6-0CA3FBED8600}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B473109-4AF4-464B-AAE6-0CA3FBED8600}.Release|Any CPU.Build.0 = Release|Any CPU
+		{441B6B4E-08A2-4EA7-BB20-5AF315163B7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{441B6B4E-08A2-4EA7-BB20-5AF315163B7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{441B6B4E-08A2-4EA7-BB20-5AF315163B7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{441B6B4E-08A2-4EA7-BB20-5AF315163B7E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {35224B9B-C629-4B64-B482-5DA4337FD4A5}
+	EndGlobalSection
+EndGlobal
