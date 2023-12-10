@@ -15,6 +15,7 @@ namespace SaliPazariWinformsApp
     public partial class KategoriIslemleri : Form
     {
         DataModel dm = new DataModel();
+        int kategoriID;
         public KategoriIslemleri()
         {
             //this.WindowState = FormWindowState.Maximized;
@@ -89,8 +90,77 @@ namespace SaliPazariWinformsApp
                     contextMenuStrip1.Show(dataGridView1, new Point(e.X, e.Y));
                     dataGridView1.ClearSelection();
                     dataGridView1.Rows[tiklananSatir].Selected = true;
-                    MessageBox.Show(dataGridView1.Rows[tiklananSatir].Cells[0].Value.ToString());
+                    kategoriID = Convert.ToInt32(dataGridView1.Rows[tiklananSatir].Cells[0].Value);
                 }
+            }
+        }
+
+        private void TSMI_guncelle_Click(object sender, EventArgs e)
+        {
+            if (kategoriID != 0)
+            {
+                Kategori kat = dm.KategoriGetir(kategoriID);
+                tb_ID.Text = kat.ID.ToString();
+                tb_isim.Text = kat.Isim;
+                tb_aciklama.Text = kat.Aciklama;
+                cb_aktif.Checked = kat.IsActive;
+                btn_guncelle.Visible = true;
+              
+            }
+        }
+
+        private void btn_guncelle_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(tb_isim.Text))
+            {
+                Kategori kat = dm.KategoriGetir(kategoriID);
+                kat.Isim = tb_isim.Text;
+                kat.Aciklama = tb_aciklama.Text;
+                kat.IsActive = cb_aktif.Checked;
+                if (dm.KategoriGuncelle(kat))
+                {
+                    Temizle();
+                    GridDoldur();
+                    MessageBox.Show(kategoriID + " ID'li Kategori Güncellendi", "Başarılı");
+                }
+                else
+                {
+                    MessageBox.Show("Kategori düzenlenirken bir hata oluştu", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Kategori adı boş bırakılmamalıdır", "Dikkat", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+           
+        }
+
+        private void btn_temizle_Click(object sender, EventArgs e)
+        {
+            Temizle();
+        }
+
+        private void Temizle()
+        {
+            tb_aciklama.Text = tb_isim.Text = tb_ID.Text = "";
+            cb_aktif.Checked = false;
+            btn_guncelle.Visible = false;
+        }
+
+        private void TSMI_sil_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show(kategoriID + " ID'li kategori Silinecektir. Devam etmek istiyor musunuz?", "Veri Silinecek", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+            {
+                if (dm.Sil("Kategoriler", kategoriID))
+                {
+                    GridDoldur();
+                    MessageBox.Show(kategoriID + " ID'li Kategori Silinmiştir", "Başarılı");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Silme işlemi iptal edildi", "Bilgi");
             }
         }
     }

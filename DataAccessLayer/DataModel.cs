@@ -89,7 +89,7 @@ namespace DataAccessLayer
             try
             {
                 List<Kategori> kategoriler = new List<Kategori>();
-                cmd.CommandText = "SELECT * FROM Kategoriler";
+                cmd.CommandText = "SELECT * FROM Kategoriler WHERE IsDeleted = 0";
                 cmd.Parameters.Clear();
                 con.Open();
                 SqlDataReader okuyucu = cmd.ExecuteReader();
@@ -140,6 +140,57 @@ namespace DataAccessLayer
                 con.Close();
             }
 
+        }
+
+        public bool KategoriGuncelle(Kategori kat)
+        {
+            try
+            {
+                cmd.CommandText = "UPDATE Kategoriler Set Isim=@isim, Aciklama=@aciklama, IsActive=@isActive WHERE ID=@id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", kat.ID);
+                cmd.Parameters.AddWithValue("@isim", kat.Isim);
+                cmd.Parameters.AddWithValue("@aciklama", kat.Aciklama);
+                cmd.Parameters.AddWithValue("@isActive", kat.IsActive);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+
+
+        #endregion
+
+        #region Genel Metotlar
+
+        public bool Sil(string tabloadi, int id)
+        {
+            try
+            {
+                cmd.CommandText = "UPDATE " + tabloadi + " SET IsDeleted=1 WHERE ID=@id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                con.Close();
+            }
         }
 
         #endregion
