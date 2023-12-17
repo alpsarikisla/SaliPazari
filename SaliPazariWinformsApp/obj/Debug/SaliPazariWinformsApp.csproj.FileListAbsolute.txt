@@ -27,3 +27,4 @@ C:\Users\303\Documents\GitHub\SaliPazari\SaliPazariWinformsApp\obj\Debug\SaliPaz
 C:\Users\303\Documents\GitHub\SaliPazari\SaliPazariWinformsApp\obj\Debug\SaliPazariWinformsApp.csproj.CopyComplete
 C:\Users\303\Documents\GitHub\SaliPazari\SaliPazariWinformsApp\obj\Debug\SaliPazariWinformsApp.exe
 C:\Users\303\Documents\GitHub\SaliPazari\SaliPazariWinformsApp\obj\Debug\SaliPazariWinformsApp.pdb
+C:\Users\303\Documents\GitHub\SaliPazari\SaliPazariWinformsApp\obj\Debug\SaliPazariWinformsApp.MarkaIslemleri.resources
