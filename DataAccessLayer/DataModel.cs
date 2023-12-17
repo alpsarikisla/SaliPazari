@@ -166,7 +166,63 @@ namespace DataAccessLayer
             }
         }
 
+        #endregion
 
+        #region Marka İşlemleri
+
+        public int MarkaEkle(Marka model)
+        {
+            int eklenenID = -1;
+            try
+            {
+                cmd.CommandText = "INSERT INTO Markalar(Isim, IsDeleted,IsActive) VALUES(@isim, @isDeleted,@isActive) SELECT @@IDENTITY";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@isim", model.Isim);
+                cmd.Parameters.AddWithValue("@isDeleted", model.IsDeleted);
+                cmd.Parameters.AddWithValue("@isActive", model.IsActive);
+                con.Open();
+                eklenenID = Convert.ToInt32(cmd.ExecuteScalar());
+                return eklenenID;
+            }
+            catch
+            {
+                return eklenenID;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public List<Marka> MarkaListele()
+        {
+            try
+            {
+                List<Marka> Markalar = new List<Marka>();
+                cmd.CommandText = "SELECT * FROM Markalar WHERE IsDeleted = 0";
+                cmd.Parameters.Clear();
+                con.Open();
+                SqlDataReader okuyucu = cmd.ExecuteReader();
+                while (okuyucu.Read())
+                {
+                    Marka m = new Marka();
+                    m.ID = okuyucu.GetInt32(0);
+                    m.Isim = okuyucu.GetString(1);
+                    m.IsActive = okuyucu.GetBoolean(2);
+                    m.IsDeleted = okuyucu.GetBoolean(3);
+                    m.IsActiveStr = m.IsActive ? "Aktif" : "Pasif";
+                }
+                return Markalar;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
 
         #endregion
 

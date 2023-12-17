@@ -68,6 +68,12 @@
     <Compile Include="KullaniciGiris.Designer.cs">
       <DependentUpon>KullaniciGiris.cs</DependentUpon>
     </Compile>
+    <Compile Include="MarkaIslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MarkaIslemleri.Designer.cs">
+      <DependentUpon>MarkaIslemleri.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AnaForm.resx">
@@ -78,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KullaniciGiris.resx">
       <DependentUpon>KullaniciGiris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MarkaIslemleri.resx">
+      <DependentUpon>MarkaIslemleri.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
