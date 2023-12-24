@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5b023e52c0c14c089e9ed856da1e5207" Name="Diagram1">
+        <EntityTypeShape EntityType="SaliPazari_DBModel.Ilceler" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaliPazari_DBModel.Kategoriler" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaliPazari_DBModel.Markalar" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaliPazari_DBModel.Sehirler" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaliPazari_DBModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaliPazari_DBModel.Tedarikciler" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaliPazari_DBModel.Yoneticiler" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaliPazari_DBModel.YoneticiYetkiler" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <AssociationConnector Association="SaliPazari_DBModel.FK_Ilceler_Sehirler" ManuallyRouted="false" />
+        <AssociationConnector Association="SaliPazari_DBModel.FK_Tedarikciler_Ilceler" ManuallyRouted="false" />
+        <AssociationConnector Association="SaliPazari_DBModel.FK_Tedarikciler_Sehirler" ManuallyRouted="false" />
+        <AssociationConnector Association="SaliPazari_DBModel.FK_Yoneticiler_YoneticiYetkiler" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

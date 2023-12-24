@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SaliPazari_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Ilceler">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sehir_ID" Type="Int32" />
+    <Property Name="Isim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Sehirler" Relationship="Self.FK_Ilceler_Sehirler" FromRole="Ilceler" ToRole="Sehirler" />
+    <NavigationProperty Name="Tedarikciler" Relationship="Self.FK_Tedarikciler_Ilceler" FromRole="Ilceler" ToRole="Tedarikciler" />
+  </EntityType>
+  <EntityType Name="Kategoriler">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Isim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Aciklama" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="IsDeleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Markalar">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Isim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="IsDeleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Sehirler">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Isim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Ilceler" Relationship="Self.FK_Ilceler_Sehirler" FromRole="Sehirler" ToRole="Ilceler" />
+    <NavigationProperty Name="Tedarikciler" Relationship="Self.FK_Tedarikciler_Sehirler" FromRole="Sehirler" ToRole="Tedarikciler" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Tedarikciler">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirmaIsim" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TicariUnvan" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Sorumlu" Type="String" MaxLength="75" FixedLength="false" Unicode="true" />
+    <Property Name="Sehir_ID" Type="Int32" />
+    <Property Name="Ilce_ID" Type="Int32" />
+    <Property Name="Adres" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Telefon" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="MailAdresi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="Ilceler" Relationship="Self.FK_Tedarikciler_Ilceler" FromRole="Tedarikciler" ToRole="Ilceler" />
+    <NavigationProperty Name="Sehirler" Relationship="Self.FK_Tedarikciler_Sehirler" FromRole="Tedarikciler" ToRole="Sehirler" />
+  </EntityType>
+  <EntityType Name="Yoneticiler">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Yetki_ID" Type="Int32" />
+    <Property Name="Isim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Soyisim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="KullaniciAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="YoneticiYetkiler" Relationship="Self.FK_Yoneticiler_YoneticiYetkiler" FromRole="Yoneticiler" ToRole="YoneticiYetkiler" />
+  </EntityType>
+  <EntityType Name="YoneticiYetkiler">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Isim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Yoneticiler" Relationship="Self.FK_Yoneticiler_YoneticiYetkiler" FromRole="YoneticiYetkiler" ToRole="Yoneticiler" />
+  </EntityType>
+  <Association Name="FK_Ilceler_Sehirler">
+    <End Role="Sehirler" Type="Self.Sehirler" Multiplicity="0..1" />
+    <End Role="Ilceler" Type="Self.Ilceler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sehirler">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Ilceler">
+        <PropertyRef Name="Sehir_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tedarikciler_Ilceler">
+    <End Role="Ilceler" Type="Self.Ilceler" Multiplicity="0..1" />
+    <End Role="Tedarikciler" Type="Self.Tedarikciler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ilceler">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Tedarikciler">
+        <PropertyRef Name="Ilce_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tedarikciler_Sehirler">
+    <End Role="Sehirler" Type="Self.Sehirler" Multiplicity="0..1" />
+    <End Role="Tedarikciler" Type="Self.Tedarikciler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sehirler">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Tedarikciler">
+        <PropertyRef Name="Sehir_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Yoneticiler_YoneticiYetkiler">
+    <End Role="YoneticiYetkiler" Type="Self.YoneticiYetkiler" Multiplicity="0..1" />
+    <End Role="Yoneticiler" Type="Self.Yoneticiler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="YoneticiYetkiler">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Yoneticiler">
+        <PropertyRef Name="Yetki_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SaliPazari_DBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Ilceler" EntityType="Self.Ilceler" />
+    <EntitySet Name="Kategoriler" EntityType="Self.Kategoriler" />
+    <EntitySet Name="Markalar" EntityType="Self.Markalar" />
+    <EntitySet Name="Sehirler" EntityType="Self.Sehirler" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Tedarikciler" EntityType="Self.Tedarikciler" />
+    <EntitySet Name="Yoneticiler" EntityType="Self.Yoneticiler" />
+    <EntitySet Name="YoneticiYetkiler" EntityType="Self.YoneticiYetkiler" />
+    <AssociationSet Name="FK_Ilceler_Sehirler" Association="Self.FK_Ilceler_Sehirler">
+      <End Role="Sehirler" EntitySet="Sehirler" />
+      <End Role="Ilceler" EntitySet="Ilceler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tedarikciler_Ilceler" Association="Self.FK_Tedarikciler_Ilceler">
+      <End Role="Ilceler" EntitySet="Ilceler" />
+      <End Role="Tedarikciler" EntitySet="Tedarikciler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tedarikciler_Sehirler" Association="Self.FK_Tedarikciler_Sehirler">
+      <End Role="Sehirler" EntitySet="Sehirler" />
+      <End Role="Tedarikciler" EntitySet="Tedarikciler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Yoneticiler_YoneticiYetkiler" Association="Self.FK_Yoneticiler_YoneticiYetkiler">
+      <End Role="YoneticiYetkiler" EntitySet="YoneticiYetkiler" />
+      <End Role="Yoneticiler" EntitySet="Yoneticiler" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

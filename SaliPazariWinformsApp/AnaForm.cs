@@ -45,5 +45,32 @@ namespace SaliPazariWinformsApp
                 frm.Show();
             }
         }
+
+        private void TSMI_UrunForm_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TSMI_Markalar_Click(object sender, EventArgs e)
+        {
+            Form[] acikformlar = this.MdiChildren;
+
+            bool acikmi = false;
+
+            foreach (Form item in acikformlar)
+            {
+                if (item.GetType() == typeof(MarkaIslemleri))
+                {
+                    item.Activate();
+                    acikmi = true;
+                }
+            }
+            if (acikmi == false)
+            {
+                MarkaIslemleri frm = new MarkaIslemleri();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+        }
     }
 }

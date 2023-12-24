@@ -40,6 +40,7 @@
             this.satışİşlemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kullanıcıİşlemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yardımToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMI_Markalar = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -92,6 +93,7 @@
             // 
             this.urunİşlemleriToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TSMI_KategoriForm,
+            this.TSMI_Markalar,
             this.TSMI_UrunForm});
             this.urunİşlemleriToolStripMenuItem.Name = "urunİşlemleriToolStripMenuItem";
             this.urunİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
@@ -109,6 +111,7 @@
             this.TSMI_UrunForm.Name = "TSMI_UrunForm";
             this.TSMI_UrunForm.Size = new System.Drawing.Size(180, 22);
             this.TSMI_UrunForm.Text = "Ürünler";
+            this.TSMI_UrunForm.Click += new System.EventHandler(this.TSMI_UrunForm_Click);
             // 
             // satışİşlemleriToolStripMenuItem
             // 
@@ -127,6 +130,13 @@
             this.yardımToolStripMenuItem.Name = "yardımToolStripMenuItem";
             this.yardımToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.yardımToolStripMenuItem.Text = "Yardım";
+            // 
+            // TSMI_Markalar
+            // 
+            this.TSMI_Markalar.Name = "TSMI_Markalar";
+            this.TSMI_Markalar.Size = new System.Drawing.Size(180, 22);
+            this.TSMI_Markalar.Text = "Markalar";
+            this.TSMI_Markalar.Click += new System.EventHandler(this.TSMI_Markalar_Click);
             // 
             // AnaForm
             // 
@@ -163,5 +173,6 @@
         private System.Windows.Forms.ToolStripMenuItem yardımToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem TSMI_KategoriForm;
         private System.Windows.Forms.ToolStripMenuItem TSMI_UrunForm;
+        private System.Windows.Forms.ToolStripMenuItem TSMI_Markalar;
     }
 }
