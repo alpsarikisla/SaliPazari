@@ -14,6 +14,12 @@ namespace SaliPazariWinformsApp
     
     public partial class Yoneticiler
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Yoneticiler()
+        {
+            this.Satislar = new HashSet<Satislar>();
+        }
+    
         public int ID { get; set; }
         public Nullable<int> Yetki_ID { get; set; }
         public string Isim { get; set; }
@@ -24,5 +30,7 @@ namespace SaliPazariWinformsApp
         public Nullable<bool> IsActive { get; set; }
     
         public virtual YoneticiYetkiler YoneticiYetkiler { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Satislar> Satislar { get; set; }
     }
 }

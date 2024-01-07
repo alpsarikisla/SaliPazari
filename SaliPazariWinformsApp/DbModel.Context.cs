@@ -33,5 +33,9 @@ namespace SaliPazariWinformsApp
         public virtual DbSet<Tedarikciler> Tedarikciler { get; set; }
         public virtual DbSet<Yoneticiler> Yoneticiler { get; set; }
         public virtual DbSet<YoneticiYetkiler> YoneticiYetkiler { get; set; }
+        public virtual DbSet<Alimlar> Alimlar { get; set; }
+        public virtual DbSet<SatisDetaylar> SatisDetaylar { get; set; }
+        public virtual DbSet<Satislar> Satislar { get; set; }
+        public virtual DbSet<Urunler> Urunler { get; set; }
     }
 }

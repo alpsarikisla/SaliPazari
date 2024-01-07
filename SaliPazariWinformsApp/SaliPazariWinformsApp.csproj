@@ -58,6 +58,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alimlar.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="AnaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +112,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SatisDetaylar.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Satislar.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Sehirler.cs">
       <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
@@ -116,6 +125,15 @@
       <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Tedarikciler.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UrunIslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UrunIslemleri.Designer.cs">
+      <DependentUpon>UrunIslemleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Urunler.cs">
       <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Yoneticiler.cs">
@@ -145,6 +163,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UrunIslemleri.resx">
+      <DependentUpon>UrunIslemleri.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="DbModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DbModel.Designer.cs</LastGenOutput>
@@ -186,6 +207,7 @@
     <Content Include="Resimler\shops.ico" />
     <Content Include="Resimler\shops.png" />
     <Content Include="shops.ico" />
+    <Content Include="UrunResim\none.gif" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

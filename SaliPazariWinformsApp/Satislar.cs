@@ -12,29 +12,21 @@ namespace SaliPazariWinformsApp
     using System;
     using System.Collections.Generic;
     
-    public partial class Tedarikciler
+    public partial class Satislar
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Tedarikciler()
+        public Satislar()
         {
-            this.Urunler = new HashSet<Urunler>();
+            this.SatisDetaylar = new HashSet<SatisDetaylar>();
         }
     
         public int ID { get; set; }
-        public string FirmaIsim { get; set; }
-        public string TicariUnvan { get; set; }
-        public string Sorumlu { get; set; }
-        public Nullable<int> Sehir_ID { get; set; }
-        public Nullable<int> Ilce_ID { get; set; }
-        public string Adres { get; set; }
-        public string Telefon { get; set; }
-        public string MailAdresi { get; set; }
-        public Nullable<bool> IsActive { get; set; }
-        public Nullable<bool> IsDeleted { get; set; }
+        public Nullable<int> Kasiyer_ID { get; set; }
+        public Nullable<System.DateTime> Tarih { get; set; }
+        public string FaturaNo { get; set; }
     
-        public virtual Ilceler Ilceler { get; set; }
-        public virtual Sehirler Sehirler { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Urunler> Urunler { get; set; }
+        public virtual ICollection<SatisDetaylar> SatisDetaylar { get; set; }
+        public virtual Yoneticiler Yoneticiler { get; set; }
     }
 }

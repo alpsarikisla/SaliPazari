@@ -17,6 +17,17 @@
         <AssociationConnector Association="SaliPazari_DBModel.FK_Tedarikciler_Ilceler" ManuallyRouted="false" />
         <AssociationConnector Association="SaliPazari_DBModel.FK_Tedarikciler_Sehirler" ManuallyRouted="false" />
         <AssociationConnector Association="SaliPazari_DBModel.FK_Yoneticiler_YoneticiYetkiler" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SaliPazari_DBModel.Alimlar" Width="1.5" PointX="12.25" PointY="7.875" />
+        <EntityTypeShape EntityType="SaliPazari_DBModel.SatisDetaylar" Width="1.5" PointX="12.25" PointY="4.625" />
+        <EntityTypeShape EntityType="SaliPazari_DBModel.Satislar" Width="1.5" PointX="10" PointY="0.75" />
+        <EntityTypeShape EntityType="SaliPazari_DBModel.Urunler" Width="1.5" PointX="10" PointY="3.875" />
+        <AssociationConnector Association="SaliPazari_DBModel.FK_Alimlar_Urunler" />
+        <AssociationConnector Association="SaliPazari_DBModel.FK_Urunler_Kategoriler" />
+        <AssociationConnector Association="SaliPazari_DBModel.FK_Urunler_Markalar" />
+        <AssociationConnector Association="SaliPazari_DBModel.FK_SatisDetaylar_Satislar" />
+        <AssociationConnector Association="SaliPazari_DBModel.FK_SatisDetaylar_Urunler" />
+        <AssociationConnector Association="SaliPazari_DBModel.FK_Satislar_Yoneticiler" />
+        <AssociationConnector Association="SaliPazari_DBModel.FK_Urunler_Tedarikciler" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

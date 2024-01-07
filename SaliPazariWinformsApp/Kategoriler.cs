@@ -14,10 +14,19 @@ namespace SaliPazariWinformsApp
     
     public partial class Kategoriler
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Kategoriler()
+        {
+            this.Urunler = new HashSet<Urunler>();
+        }
+    
         public int ID { get; set; }
         public string Isim { get; set; }
         public string Aciklama { get; set; }
         public Nullable<bool> IsActive { get; set; }
         public Nullable<bool> IsDeleted { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Urunler> Urunler { get; set; }
     }
 }
