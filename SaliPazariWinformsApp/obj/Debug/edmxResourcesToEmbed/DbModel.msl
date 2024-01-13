@@ -140,5 +140,24 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="UrunlerView">
+      <EntityTypeMapping TypeName="SaliPazari_DBModel.UrunlerView">
+        <MappingFragment StoreEntitySet="UrunlerView">
+          <ScalarProperty Name="Hızlı_Satış" ColumnName="Hızlı Satış" />
+          <ScalarProperty Name="Silinmis" ColumnName="Silinmis" />
+          <ScalarProperty Name="Aktif" ColumnName="Aktif" />
+          <ScalarProperty Name="Güvenlik_Stoğu" ColumnName="Güvenlik Stoğu" />
+          <ScalarProperty Name="Stok" ColumnName="Stok" />
+          <ScalarProperty Name="Resim" ColumnName="Resim" />
+          <ScalarProperty Name="Birim_Fiyat" ColumnName="Birim Fiyat" />
+          <ScalarProperty Name="Ürün_Adı" ColumnName="Ürün Adı" />
+          <ScalarProperty Name="Ürün_Barkod" ColumnName="Ürün Barkod" />
+          <ScalarProperty Name="Firma_Adı" ColumnName="Firma Adı" />
+          <ScalarProperty Name="Marka_Adı" ColumnName="Marka Adı" />
+          <ScalarProperty Name="Kategori_Adı" ColumnName="Kategori Adı" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

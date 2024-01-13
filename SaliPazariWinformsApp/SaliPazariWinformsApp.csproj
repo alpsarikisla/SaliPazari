@@ -83,6 +83,12 @@
       <DependentUpon>DbModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Helpers.cs" />
+    <Compile Include="HizliKategoriEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HizliKategoriEkle.Designer.cs">
+      <DependentUpon>HizliKategoriEkle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ilceler.cs">
       <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
@@ -136,6 +142,9 @@
     <Compile Include="Urunler.cs">
       <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="UrunlerView.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Yoneticiler.cs">
       <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
@@ -144,6 +153,9 @@
     </Compile>
     <EmbeddedResource Include="AnaForm.resx">
       <DependentUpon>AnaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HizliKategoriEkle.resx">
+      <DependentUpon>HizliKategoriEkle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KategoriIslemleri.resx">
       <DependentUpon>KategoriIslemleri.cs</DependentUpon>
@@ -207,6 +219,7 @@
     <Content Include="Resimler\shops.ico" />
     <Content Include="Resimler\shops.png" />
     <Content Include="shops.ico" />
+    <Content Include="UrunResim\93ea1a26-4939-4372-a247-5f629e1dbf61.jpg" />
     <Content Include="UrunResim\none.gif" />
   </ItemGroup>
   <ItemGroup>

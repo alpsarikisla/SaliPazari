@@ -127,6 +127,26 @@
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Isim" Type="nvarchar" MaxLength="50" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SaliPazari_DB.dbo.UrunlerView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="UrunlerView">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Kategori Adı" Type="nvarchar" MaxLength="50" />
+    <Property Name="Marka Adı" Type="nvarchar" MaxLength="50" />
+    <Property Name="Firma Adı" Type="nvarchar" MaxLength="100" />
+    <Property Name="Ürün Barkod" Type="nvarchar" MaxLength="20" />
+    <Property Name="Ürün Adı" Type="nvarchar" MaxLength="50" />
+    <Property Name="Birim Fiyat" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Resim" Type="nvarchar" MaxLength="50" />
+    <Property Name="Stok" Type="int" />
+    <Property Name="Güvenlik Stoğu" Type="int" />
+    <Property Name="Aktif" Type="bit" />
+    <Property Name="Silinmis" Type="bit" />
+    <Property Name="Hızlı Satış" Type="bit" />
+  </EntityType>
   <Association Name="FK_Alimlar_Urunler">
     <End Role="Urunler" Type="Self.Urunler" Multiplicity="0..1" />
     <End Role="Alimlar" Type="Self.Alimlar" Multiplicity="*" />
@@ -272,6 +292,23 @@
     <EntitySet Name="Urunler" EntityType="Self.Urunler" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Yoneticiler" EntityType="Self.Yoneticiler" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="YoneticiYetkiler" EntityType="Self.YoneticiYetkiler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UrunlerView" EntityType="Self.UrunlerView" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [UrunlerView].[ID] AS [ID], 
+    [UrunlerView].[Kategori Adı] AS [Kategori Adı], 
+    [UrunlerView].[Marka Adı] AS [Marka Adı], 
+    [UrunlerView].[Firma Adı] AS [Firma Adı], 
+    [UrunlerView].[Ürün Barkod] AS [Ürün Barkod], 
+    [UrunlerView].[Ürün Adı] AS [Ürün Adı], 
+    [UrunlerView].[Birim Fiyat] AS [Birim Fiyat], 
+    [UrunlerView].[Resim] AS [Resim], 
+    [UrunlerView].[Stok] AS [Stok], 
+    [UrunlerView].[Güvenlik Stoğu] AS [Güvenlik Stoğu], 
+    [UrunlerView].[Aktif] AS [Aktif], 
+    [UrunlerView].[Silinmis] AS [Silinmis], 
+    [UrunlerView].[Hızlı Satış] AS [Hızlı Satış]
+    FROM [dbo].[UrunlerView] AS [UrunlerView]</DefiningQuery>
+    </EntitySet>
     <AssociationSet Name="FK_Alimlar_Urunler" Association="Self.FK_Alimlar_Urunler">
       <End Role="Urunler" EntitySet="Urunler" />
       <End Role="Alimlar" EntitySet="Alimlar" />

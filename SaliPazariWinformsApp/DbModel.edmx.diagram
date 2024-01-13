@@ -28,6 +28,7 @@
         <AssociationConnector Association="SaliPazari_DBModel.FK_SatisDetaylar_Urunler" />
         <AssociationConnector Association="SaliPazari_DBModel.FK_Satislar_Yoneticiler" />
         <AssociationConnector Association="SaliPazari_DBModel.FK_Urunler_Tedarikciler" />
+        <EntityTypeShape EntityType="SaliPazari_DBModel.UrunlerView" Width="1.5" PointX="5.375" PointY="8.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -197,6 +197,7 @@
       <End Role="Tedarikciler" EntitySet="Tedarikciler" />
       <End Role="Urunler" EntitySet="Urunler" />
     </AssociationSet>
+    <EntitySet Name="UrunlerView" EntityType="SaliPazari_DBModel.UrunlerView" />
   </EntityContainer>
   <EntityType Name="Alimlar">
     <Key>
@@ -339,4 +340,22 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="UrunlerView">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Kategori_Adı" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Marka_Adı" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Firma_Adı" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Ürün_Barkod" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Ürün_Adı" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Birim_Fiyat" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Resim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Stok" Type="Int32" />
+    <Property Name="Güvenlik_Stoğu" Type="Int32" />
+    <Property Name="Aktif" Type="Boolean" />
+    <Property Name="Silinmis" Type="Boolean" />
+    <Property Name="Hızlı_Satış" Type="Boolean" />
+  </EntityType>
 </Schema>

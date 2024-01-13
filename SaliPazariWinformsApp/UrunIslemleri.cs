@@ -23,22 +23,11 @@ namespace SaliPazariWinformsApp
 
         private void UrunIslemleri_Load(object sender, EventArgs e)
         {
-            cb_kategori.ValueMember = "ID";
-            cb_kategori.DisplayMember = "Isim";
-            cb_kategori.DataSource = db.Kategoriler.ToList();
-            cb_kategori.Text = "Seçiniz...";
-
-            cb_marka.ValueMember = "ID";
-            cb_marka.DisplayMember = "Isim";
-            cb_marka.DataSource = db.Markalar.ToList();
-            cb_marka.Text = "Seçiniz...";
-
-            cb_Tedarikci.ValueMember = "ID";
-            cb_Tedarikci.DisplayMember = "FirmaIsim";
-            cb_Tedarikci.DataSource = db.Tedarikciler.ToList();
-            cb_Tedarikci.Text = "Seçiniz...";
-          
+            Cb_Doldur();
+            Dgv_Doldur();
         }
+
+
 
         private void btn_resimSec_Click(object sender, EventArgs e)
         {
@@ -85,5 +74,35 @@ namespace SaliPazariWinformsApp
                 MessageBox.Show("Hata Oluştu");
             }
         }
+
+        private void btn_KategoriEkle_Click(object sender, EventArgs e)
+        {
+            HizliKategoriEkle hke = new HizliKategoriEkle();
+            DialogResult gelen =  hke.ShowDialog();
+            Cb_Doldur();
+        }
+        private void Cb_Doldur()
+        {
+            cb_kategori.ValueMember = "ID";
+            cb_kategori.DisplayMember = "Isim";
+            cb_kategori.DataSource = db.Kategoriler.ToList();
+            cb_kategori.Text = "Seçiniz...";
+
+            cb_marka.ValueMember = "ID";
+            cb_marka.DisplayMember = "Isim";
+            cb_marka.DataSource = db.Markalar.ToList();
+            cb_marka.Text = "Seçiniz...";
+
+            cb_Tedarikci.ValueMember = "ID";
+            cb_Tedarikci.DisplayMember = "FirmaIsim";
+            cb_Tedarikci.DataSource = db.Tedarikciler.ToList();
+            cb_Tedarikci.Text = "Seçiniz...";
+
+        }
+        private void Dgv_Doldur()
+        {
+            dgv_Urunler.DataSource = db.UrunlerView.ToList();
+        }
+
     }
 }

@@ -132,6 +132,26 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Isim" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SaliPazari_DB.dbo.UrunlerView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="UrunlerView">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Kategori Adı" Type="nvarchar" MaxLength="50" />
+          <Property Name="Marka Adı" Type="nvarchar" MaxLength="50" />
+          <Property Name="Firma Adı" Type="nvarchar" MaxLength="100" />
+          <Property Name="Ürün Barkod" Type="nvarchar" MaxLength="20" />
+          <Property Name="Ürün Adı" Type="nvarchar" MaxLength="50" />
+          <Property Name="Birim Fiyat" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Resim" Type="nvarchar" MaxLength="50" />
+          <Property Name="Stok" Type="int" />
+          <Property Name="Güvenlik Stoğu" Type="int" />
+          <Property Name="Aktif" Type="bit" />
+          <Property Name="Silinmis" Type="bit" />
+          <Property Name="Hızlı Satış" Type="bit" />
+        </EntityType>
         <Association Name="FK_Alimlar_Urunler">
           <End Role="Urunler" Type="Self.Urunler" Multiplicity="0..1" />
           <End Role="Alimlar" Type="Self.Alimlar" Multiplicity="*" />
@@ -277,6 +297,23 @@
           <EntitySet Name="Urunler" EntityType="Self.Urunler" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Yoneticiler" EntityType="Self.Yoneticiler" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="YoneticiYetkiler" EntityType="Self.YoneticiYetkiler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UrunlerView" EntityType="Self.UrunlerView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [UrunlerView].[ID] AS [ID], 
+    [UrunlerView].[Kategori Adı] AS [Kategori Adı], 
+    [UrunlerView].[Marka Adı] AS [Marka Adı], 
+    [UrunlerView].[Firma Adı] AS [Firma Adı], 
+    [UrunlerView].[Ürün Barkod] AS [Ürün Barkod], 
+    [UrunlerView].[Ürün Adı] AS [Ürün Adı], 
+    [UrunlerView].[Birim Fiyat] AS [Birim Fiyat], 
+    [UrunlerView].[Resim] AS [Resim], 
+    [UrunlerView].[Stok] AS [Stok], 
+    [UrunlerView].[Güvenlik Stoğu] AS [Güvenlik Stoğu], 
+    [UrunlerView].[Aktif] AS [Aktif], 
+    [UrunlerView].[Silinmis] AS [Silinmis], 
+    [UrunlerView].[Hızlı Satış] AS [Hızlı Satış]
+    FROM [dbo].[UrunlerView] AS [UrunlerView]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_Alimlar_Urunler" Association="Self.FK_Alimlar_Urunler">
             <End Role="Urunler" EntitySet="Urunler" />
             <End Role="Alimlar" EntitySet="Alimlar" />
@@ -523,6 +560,7 @@
             <End Role="Tedarikciler" EntitySet="Tedarikciler" />
             <End Role="Urunler" EntitySet="Urunler" />
           </AssociationSet>
+          <EntitySet Name="UrunlerView" EntityType="SaliPazari_DBModel.UrunlerView" />
         </EntityContainer>
         <EntityType Name="Alimlar">
           <Key>
@@ -665,6 +703,24 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="UrunlerView">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Kategori_Adı" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Marka_Adı" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Firma_Adı" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Ürün_Barkod" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Ürün_Adı" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Birim_Fiyat" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Resim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Stok" Type="Int32" />
+          <Property Name="Güvenlik_Stoğu" Type="Int32" />
+          <Property Name="Aktif" Type="Boolean" />
+          <Property Name="Silinmis" Type="Boolean" />
+          <Property Name="Hızlı_Satış" Type="Boolean" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -806,6 +862,25 @@
                 <ScalarProperty Name="Tedarikci_ID" ColumnName="Tedarikci_ID" />
                 <ScalarProperty Name="Marka_ID" ColumnName="Marka_ID" />
                 <ScalarProperty Name="Kategori_ID" ColumnName="Kategori_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UrunlerView">
+            <EntityTypeMapping TypeName="SaliPazari_DBModel.UrunlerView">
+              <MappingFragment StoreEntitySet="UrunlerView">
+                <ScalarProperty Name="Hızlı_Satış" ColumnName="Hızlı Satış" />
+                <ScalarProperty Name="Silinmis" ColumnName="Silinmis" />
+                <ScalarProperty Name="Aktif" ColumnName="Aktif" />
+                <ScalarProperty Name="Güvenlik_Stoğu" ColumnName="Güvenlik Stoğu" />
+                <ScalarProperty Name="Stok" ColumnName="Stok" />
+                <ScalarProperty Name="Resim" ColumnName="Resim" />
+                <ScalarProperty Name="Birim_Fiyat" ColumnName="Birim Fiyat" />
+                <ScalarProperty Name="Ürün_Adı" ColumnName="Ürün Adı" />
+                <ScalarProperty Name="Ürün_Barkod" ColumnName="Ürün Barkod" />
+                <ScalarProperty Name="Firma_Adı" ColumnName="Firma Adı" />
+                <ScalarProperty Name="Marka_Adı" ColumnName="Marka Adı" />
+                <ScalarProperty Name="Kategori_Adı" ColumnName="Kategori Adı" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

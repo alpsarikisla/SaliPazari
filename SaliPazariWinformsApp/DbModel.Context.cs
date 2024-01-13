@@ -37,5 +37,6 @@ namespace SaliPazariWinformsApp
         public virtual DbSet<SatisDetaylar> SatisDetaylar { get; set; }
         public virtual DbSet<Satislar> Satislar { get; set; }
         public virtual DbSet<Urunler> Urunler { get; set; }
+        public virtual DbSet<UrunlerView> UrunlerView { get; set; }
     }
 }

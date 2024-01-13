@@ -33,3 +33,4 @@ C:\Users\303\Documents\GitHub\SaliPazari\SaliPazariWinformsApp\bin\Debug\EntityF
 C:\Users\303\Documents\GitHub\SaliPazari\SaliPazariWinformsApp\bin\Debug\EntityFramework.xml
 C:\Users\303\Documents\GitHub\SaliPazari\SaliPazariWinformsApp\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\303\Documents\GitHub\SaliPazari\SaliPazariWinformsApp\obj\Debug\SaliPazariWinformsApp.UrunIslemleri.resources
+C:\Users\303\Documents\GitHub\SaliPazari\SaliPazariWinformsApp\obj\Debug\SaliPazariWinformsApp.HizliKategoriEkle.resources
