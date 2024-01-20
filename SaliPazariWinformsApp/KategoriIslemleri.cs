@@ -155,7 +155,6 @@ namespace SaliPazariWinformsApp
                 if (dm.Sil("Kategoriler", kategoriID))
                 {
                     GridDoldur();
-                    MessageBox.Show(kategoriID + " ID'li Kategori Silinmiştir", "Başarılı");
                 }
             }
             else

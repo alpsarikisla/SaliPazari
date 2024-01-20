@@ -95,7 +95,7 @@ namespace DataAccessLayer
                 SqlDataReader okuyucu = cmd.ExecuteReader();
                 while (okuyucu.Read())
                 {
-                    Kategori kat = new Kategori(okuyucu.GetInt32(0), okuyucu.GetString(1), okuyucu.GetString(2), okuyucu.GetBoolean(3), okuyucu.GetBoolean(4));
+                    Kategori kat = new Kategori(okuyucu.GetInt32(0), okuyucu.GetString(1), !okuyucu.IsDBNull(2) ? okuyucu.GetString(2):"", okuyucu.GetBoolean(3), okuyucu.GetBoolean(4));
                     kat.IsActiveStr = kat.IsActive ? "Aktif" : "Pasif";
                     kategoriler.Add(kat);
                 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DataAccessLayer;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,7 +26,7 @@ namespace SaliPazariWinformsApp
         private void UrunIslemleri_Load(object sender, EventArgs e)
         {
             Cb_Doldur();
-            Dgv_Doldur();
+            Dgv_Doldur3();
         }
 
 
@@ -79,13 +81,30 @@ namespace SaliPazariWinformsApp
         {
             HizliKategoriEkle hke = new HizliKategoriEkle();
             DialogResult gelen =  hke.ShowDialog();
+            //Enum ve switch kardeşliği
+
+            switch (gelen)
+            {
+                case DialogResult.OK:
+                    MessageBox.Show("Kategori eklendi", "Başarılı");
+                    break;
+                case DialogResult.Cancel:
+                    MessageBox.Show("Kategori ekleme işlemi iptal edildi.", "İptal");
+                    break;
+                case DialogResult.Abort:
+                    MessageBox.Show("Kategori eklenirken bir hata oluştu", "Hata");
+                    break;
+                default:
+                    break;
+            }
+
             Cb_Doldur();
         }
         private void Cb_Doldur()
         {
             cb_kategori.ValueMember = "ID";
             cb_kategori.DisplayMember = "Isim";
-            cb_kategori.DataSource = db.Kategoriler.ToList();
+            cb_kategori.DataSource = db.Kategoriler.Where(x=> x.IsDeleted== false).ToList();
             cb_kategori.Text = "Seçiniz...";
 
             cb_marka.ValueMember = "ID";
@@ -101,8 +120,97 @@ namespace SaliPazariWinformsApp
         }
         private void Dgv_Doldur()
         {
-            dgv_Urunler.DataSource = db.UrunlerView.ToList();
-        }
+            dgv_Urunler.Rows.Clear();
+            dgv_Urunler.ColumnCount = 12;
+            dgv_Urunler.Columns[0].Name = "No";
+            dgv_Urunler.Columns[1].Name = "Barkod No";
+            dgv_Urunler.Columns[2].Name = "Kategori Adı";
+            dgv_Urunler.Columns[3].Name = "Marka Adı";
+            dgv_Urunler.Columns[4].Name = "Firma Adı";
+            dgv_Urunler.Columns[5].Name = "Ürün Adı";
+            dgv_Urunler.Columns[6].Name = "Fiyat";
+            dgv_Urunler.Columns[7].Name = "Stok";
+            dgv_Urunler.Columns[8].Name = "Güvenlik Stoğu";
+            dgv_Urunler.Columns[8].Width = 100;
+            dgv_Urunler.Columns[9].Name = "Aktif";
+            dgv_Urunler.Columns[10].Name = "Silinmiş";
+            dgv_Urunler.Columns[11].Name = "Hızlı Satış";
 
+            List<UrunlerView> urunlers = db.UrunlerView.ToList();
+            foreach (UrunlerView item in urunlers)
+            {
+                ArrayList row = new ArrayList();
+                row.Add(item.ID);
+                row.Add(item.Ürün_Barkod);
+                row.Add(item.Kategori_Adı);
+                row.Add(item.Marka_Adı);
+                row.Add(item.Firma_Adı);
+                row.Add(item.Ürün_Adı);
+                row.Add(item.Birim_Fiyat);
+                row.Add(item.Stok);
+                row.Add(item.Güvenlik_Stoğu);
+                row.Add(item.Aktif);
+                row.Add(item.Silinmis);
+                row.Add(item.Hızlı_Satış);
+                dgv_Urunler.Rows.Add(row.ToArray());
+            }
+        }
+        private void Dgv_Doldur2()
+        {
+            dgv_Urunler.DataSource = db.UrunlerView.Select(x => new
+            {
+                ÜrunNo = x.ID,
+                Barkod = x.Ürün_Barkod,
+                Isim = x.Ürün_Adı,
+                Kategori = x.Kategori_Adı,
+            }).ToList();
+        }
+        private void Dgv_Doldur3()
+        {
+            var liste = db.Urunler.Select(x => new
+            {
+                No = x.ID,
+                Barkod = x.BarkodNo,
+                Kategori = x.Kategoriler.Isim,
+                Marka = x.Markalar.Isim,
+                Tedarikci = x.Tedarikciler.FirmaIsim,
+                UrunAdi = x.UrunAdi,
+                Fiyat = x.BirimFiyat,
+                Stok = x.StokMiktari,
+                GStok = x.GuvenlikStogu,
+                Aktif = x.IsActive,
+                HizliSatis = x.IsFastProduct
+            });
+            dgv_Urunler.Rows.Clear();
+            dgv_Urunler.ColumnCount = 11;
+            dgv_Urunler.Columns[0].Name = "No";
+            dgv_Urunler.Columns[1].Name = "Barkod No";
+            dgv_Urunler.Columns[2].Name = "Kategori Adı";
+            dgv_Urunler.Columns[3].Name = "Marka Adı";
+            dgv_Urunler.Columns[4].Name = "Firma Adı";
+            dgv_Urunler.Columns[5].Name = "Ürün Adı";
+            dgv_Urunler.Columns[6].Name = "Fiyat";
+            dgv_Urunler.Columns[7].Name = "Stok";
+            dgv_Urunler.Columns[8].Name = "Güvenlik Stoğu";
+            dgv_Urunler.Columns[8].Width = 120;
+            dgv_Urunler.Columns[9].Name = "Aktif";
+            dgv_Urunler.Columns[10].Name = "Hızlı Satış";
+            foreach (var item in liste)
+            {
+                ArrayList row = new ArrayList();
+                row.Add(item.No);
+                row.Add(item.Barkod);
+                row.Add(item.Kategori);
+                row.Add(item.Marka);
+                row.Add(item.Tedarikci);
+                row.Add(item.UrunAdi);
+                row.Add(item.Fiyat);
+                row.Add(item.Stok);
+                row.Add(item.GStok);
+                row.Add(item.Aktif);
+                row.Add(item.HizliSatis);
+                dgv_Urunler.Rows.Add(row.ToArray());
+            }
+        }
     }
 }

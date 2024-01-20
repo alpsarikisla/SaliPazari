@@ -31,18 +31,24 @@ namespace SaliPazariWinformsApp
                 {
                     db.Kategoriler.Add(k);
                     db.SaveChanges();
-                    this.DialogResult = DialogResult.Abort;
-                    this.Close();
+                    this.DialogResult = DialogResult.OK;
                 }
                 catch
                 {
-                    MessageBox.Show("Kategori eklerken bir hata oluştu", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.DialogResult = DialogResult.Abort;
                 }
+                this.Close();
             }
             else
             {
                 MessageBox.Show("İsim Boş Bırakılamaz", "Dikkat", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btn_iptal_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }

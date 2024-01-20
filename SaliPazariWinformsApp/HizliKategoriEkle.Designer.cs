@@ -31,6 +31,7 @@
             this.tb_kategori = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_ekle = new System.Windows.Forms.Button();
+            this.btn_iptal = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tb_kategori
@@ -51,7 +52,7 @@
             // 
             // btn_ekle
             // 
-            this.btn_ekle.Location = new System.Drawing.Point(208, 66);
+            this.btn_ekle.Location = new System.Drawing.Point(127, 66);
             this.btn_ekle.Name = "btn_ekle";
             this.btn_ekle.Size = new System.Drawing.Size(75, 23);
             this.btn_ekle.TabIndex = 2;
@@ -59,11 +60,22 @@
             this.btn_ekle.UseVisualStyleBackColor = true;
             this.btn_ekle.Click += new System.EventHandler(this.btn_ekle_Click);
             // 
+            // btn_iptal
+            // 
+            this.btn_iptal.Location = new System.Drawing.Point(208, 66);
+            this.btn_iptal.Name = "btn_iptal";
+            this.btn_iptal.Size = new System.Drawing.Size(75, 23);
+            this.btn_iptal.TabIndex = 3;
+            this.btn_iptal.Text = "İptal";
+            this.btn_iptal.UseVisualStyleBackColor = true;
+            this.btn_iptal.Click += new System.EventHandler(this.btn_iptal_Click);
+            // 
             // HizliKategoriEkle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(301, 105);
+            this.Controls.Add(this.btn_iptal);
             this.Controls.Add(this.btn_ekle);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tb_kategori);
@@ -80,5 +92,6 @@
         private System.Windows.Forms.TextBox tb_kategori;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_ekle;
+        private System.Windows.Forms.Button btn_iptal;
     }
 }
