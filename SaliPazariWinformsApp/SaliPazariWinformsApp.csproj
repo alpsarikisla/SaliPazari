@@ -89,6 +89,12 @@
     <Compile Include="HizliKategoriEkle.Designer.cs">
       <DependentUpon>HizliKategoriEkle.cs</DependentUpon>
     </Compile>
+    <Compile Include="HizliUrun.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HizliUrun.Designer.cs">
+      <DependentUpon>HizliUrun.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ilceler.cs">
       <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
@@ -124,6 +130,12 @@
     <Compile Include="Satislar.cs">
       <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="SatisModulu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SatisModulu.Designer.cs">
+      <DependentUpon>SatisModulu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sehirler.cs">
       <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
@@ -157,6 +169,9 @@
     <EmbeddedResource Include="HizliKategoriEkle.resx">
       <DependentUpon>HizliKategoriEkle.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HizliUrun.resx">
+      <DependentUpon>HizliUrun.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="KategoriIslemleri.resx">
       <DependentUpon>KategoriIslemleri.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,6 +190,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SatisModulu.resx">
+      <DependentUpon>SatisModulu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UrunIslemleri.resx">
       <DependentUpon>UrunIslemleri.cs</DependentUpon>
     </EmbeddedResource>

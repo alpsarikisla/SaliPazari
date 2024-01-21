@@ -89,5 +89,27 @@ namespace SaliPazariWinformsApp
                 frm.Show();
             }
         }
+
+        private void TSMI_satisYap_Click(object sender, EventArgs e)
+        {
+            Form[] acikformlar = this.MdiChildren;
+
+            bool acikmi = false;
+
+            foreach (Form item in acikformlar)
+            {
+                if (item.GetType() == typeof(SatisModulu))
+                {
+                    item.Activate();
+                    acikmi = true;
+                }
+            }
+            if (acikmi == false)
+            {
+                SatisModulu frm = new SatisModulu();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+        }
     }
 }
